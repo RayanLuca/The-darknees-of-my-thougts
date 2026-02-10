@@ -1,0 +1,99 @@
+[gd_scene format=4 uid="uid://c2i1e6fijodsh"]
+
+[ext_resource type="PackedScene" uid="uid://cyelbrw1wjum2" path="res://entites/player.tscn" id="1_e2knd"]
+[ext_resource type="TileSet" uid="uid://ct1uhyx87fipn" path="res://scene/terain.tres" id="2_2xpkg"]
+[ext_resource type="Texture2D" uid="uid://cvnkwklmqffqw" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/6 - Distant_trees.png" id="3_gbfvw"]
+[ext_resource type="PackedScene" uid="uid://d3larf1yiclk4" path="res://entites/camera.tscn" id="4_jo4av"]
+[ext_resource type="Texture2D" uid="uid://dvdfjipcvqnw8" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/5 - Tree_row_BG_2.png" id="4_qxlj4"]
+[ext_resource type="Texture2D" uid="uid://bddpefjnfkdbu" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/4 - Tree_row_BG_1.png" id="5_jo4av"]
+[ext_resource type="Texture2D" uid="uid://cxj5tfpn10yrh" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/3 - Bottom_leaf_piles.png" id="6_jxvlp"]
+[ext_resource type="Texture2D" uid="uid://cxwsdur6ekg1e" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/2 - Trees.png" id="7_gwku7"]
+[ext_resource type="Texture2D" uid="uid://bkynjc6vol2ia" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/1 - Leaf_top.png" id="8_64es3"]
+
+[node name="Forest" type="Node2D" unique_id=1353418658]
+
+[node name="Player" parent="." unique_id=1989633027 instance=ExtResource("1_e2knd")]
+position = Vector2(26, 165)
+
+[node name="Terain" type="TileMapLayer" parent="." unique_id=840396423]
+position = Vector2(0, 196)
+tile_map_data = PackedByteArray("AAAAAP//AQACAAMAAAABAP//AQACAAMAAAACAP//AQACAAMAAAADAP//AQACAAMAAAAEAP//AQACAAMAAAAFAP//AQACAAMAAAAGAP//AQACAAMAAAAHAP//AQACAAMAAAAIAP//AQACAAMAAAAJAP//AQACAAMAAAAKAP//AQACAAMAAAALAP//AQACAAMAAAAMAP//AQACAAMAAAANAP//AQACAAMAAAAOAP//AQACAAMAAAAPAP//AQACAAMAAAAQAP//AQACAAMAAAARAP//AQACAAMAAAAAAAAAAQAEAAMAAAABAAAAAQAEAAMAAAACAAAAAQAEAAMAAAADAAAAAQAEAAMAAAAEAAAAAQAEAAMAAAAFAAAAAQAEAAMAAAAGAAAAAQAEAAMAAAAHAAAAAQAEAAMAAAAIAAAAAQAEAAMAAAAJAAAAAQAEAAMAAAAKAAAAAQAEAAMAAAALAAAAAQAEAAMAAAAMAAAAAQAEAAMAAAANAAAAAQAEAAMAAAAOAAAAAQAEAAMAAAAPAAAAAQAEAAMAAAAQAAAAAQAEAAMAAAARAAAAAQAEAAMAAAASAP//AQACAAMAAAASAAAAAQAEAAMAAAATAP//AQACAAMAAAATAAAAAQAEAAMAAAAUAP//AQACAAMAAAAUAAAAAQAEAAMAAAAVAP//AQACAAMAAAAVAAAAAQAEAAMAAAAWAP//AQACAAMAAAAWAAAAAQAEAAMAAAAXAP//AQACAAMAAAAXAAAAAQAEAAMAAAAYAP//AQACAAMAAAAYAAAAAQAEAAMAAAAZAP//AQACAAMAAAAZAAAAAQAEAAMAAAAaAP//AQACAAMAAAAaAAAAAQAEAAMAAAAbAP//AQACAAMAAAAbAAAAAQAEAAMAAAAcAP//AQACAAMAAAAcAAAAAQAEAAMAAAAdAP//AQACAAMAAAAdAAAAAQAEAAMAAAAeAP//AQACAAMAAAAeAAAAAQAEAAMAAAAfAP//AQACAAMAAAAfAAAAAQAEAAMAAAAgAP//AQACAAMAAAAgAAAAAQAEAAMAAAAhAP//AQACAAMAAAAhAAAAAQAEAAMAAAAiAP//AQACAAMAAAAiAAAAAQAEAAMAAAAjAP//AQACAAMAAAAjAAAAAQAEAAMAAAAkAP//AQACAAMAAAAkAAAAAQAEAAMAAAAlAP//AQACAAMAAAAlAAAAAQAEAAMAAAAmAP//AQACAAMAAAAmAAAAAQAEAAMAAAAnAP//AQACAAMAAAAnAAAAAQAEAAMAAAAoAP//AQACAAMAAAAoAAAAAQAEAAMAAAApAP//AQACAAMAAAApAAAAAQAEAAMAAAAqAP//AQACAAMAAAAqAAAAAQAEAAMAAAArAP//AQACAAMAAAArAAAAAQAEAAMAAAAsAP//AQACAAMAAAAsAAAAAQAEAAMAAAAtAP//AQACAAMAAAAtAAAAAQAEAAMAAAAMAP3/AQADAAEAAAAMAP7/AQADAAIAAAANAP3/AQAEAAEAAAANAP7/AQAEAAIAAAAOAP3/AQADAAMAAAAOAP7/AQAEAAIAAAAOAPv/AQABAAMAAAAOAPz/AQADAAUAAAAPAPv/AQAEAAEAAAAPAPz/AQAEAAUAAAAQAPv/AQAFAAEAAAAQAPz/AQAFAAUAAAAPAP3/AQAEAAIAAAAPAP7/AQAEAAIAAAAQAP3/AQAFAAMAAAAQAP7/AQAEAAIAAAARAP3/AQAEAAEAAAARAP7/AQAEAAIAAAASAP3/AQAFAAEAAAASAP7/AQAFAAIAAAA=")
+tile_set = ExtResource("2_2xpkg")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1562193727]
+
+[node name="6" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1242750687]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/6" unique_id=1579256147]
+texture_repeat = 2
+position = Vector2(0, -3)
+texture = ExtResource("3_gbfvw")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 576, 208)
+
+[node name="5" type="ParallaxLayer" parent="ParallaxBackground" unique_id=434856687]
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/5" unique_id=99861565]
+texture_repeat = 2
+position = Vector2(0, -3)
+texture = ExtResource("4_qxlj4")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 576, 208)
+
+[node name="4" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1102413626]
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/4" unique_id=125846816]
+texture_repeat = 2
+position = Vector2(0, -3)
+texture = ExtResource("5_jo4av")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 576, 208)
+
+[node name="3" type="ParallaxLayer" parent="ParallaxBackground" unique_id=762388601]
+motion_scale = Vector2(0.4, 0.4)
+motion_mirroring = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/3" unique_id=1959029143]
+texture_repeat = 2
+position = Vector2(0, -3)
+texture = ExtResource("6_jxvlp")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 576, 208)
+
+[node name="2" type="ParallaxLayer" parent="ParallaxBackground" unique_id=854509082]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/2" unique_id=2092130147]
+texture_repeat = 2
+position = Vector2(0, -3)
+texture = ExtResource("7_gwku7")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 576, 208)
+
+[node name="1" type="ParallaxLayer" parent="ParallaxBackground" unique_id=321637125]
+motion_scale = Vector2(1.3, 1.3)
+motion_mirroring = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/1" unique_id=1519441997]
+texture_repeat = 2
+position = Vector2(0, -13)
+texture = ExtResource("8_64es3")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 576, 208)
+
+[node name="Camera" parent="." unique_id=1371373349 instance=ExtResource("4_jo4av")]
+position = Vector2(-361, -291)
+limit_top = 0
