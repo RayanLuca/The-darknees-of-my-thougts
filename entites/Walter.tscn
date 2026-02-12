@@ -143,6 +143,7 @@ position = Vector2(140, 331)
 script = ExtResource("1_m8tt5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=367950223]
+visible = false
 position = Vector2(2, 10)
 shape = SubResource("RectangleShape2D_m8tt5")
 
