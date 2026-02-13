@@ -5,8 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://cjae3fx03eo4t" path="res://sprites/4 - Percy/Jump (32 x 32).png" id="3_ljc4j"]
 [ext_resource type="Texture2D" uid="uid://c7ou51c2tdgu8" path="res://sprites/4 - Percy/Running (32 x 32).png" id="4_d8v00"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m8tt5"]
-size = Vector2(18, 17)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m8tt5"]
+radius = 9.0
+height = 18.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n1nvw"]
 atlas = ExtResource("2_m8tt5")
@@ -143,13 +144,12 @@ position = Vector2(140, 331)
 script = ExtResource("1_m8tt5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=367950223]
-visible = false
-position = Vector2(2, 10)
-shape = SubResource("RectangleShape2D_m8tt5")
+position = Vector2(8, -1)
+shape = SubResource("CapsuleShape2D_m8tt5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=88931036]
 z_index = 1
-position = Vector2(0, 3)
+position = Vector2(8, -8)
 sprite_frames = SubResource("SpriteFrames_pih8c")
 animation = &"wolk"
 autoplay = "idle"

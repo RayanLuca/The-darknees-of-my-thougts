@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://diutejkv6ohhn"]
+
+[ext_resource type="Texture2D" uid="uid://bhje4ul5rul7a" path="res://sprites/3 - Skeleton/Standing (32 x 32).png" id="1_3va73"]
+[ext_resource type="Script" uid="uid://46e3yknhujmh" path="res://scripts/pedro_o_esqueleto.gd" id="1_4qlq2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4qlq2"]
+radius = 8.0
+height = 24.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3fye"]
+atlas = ExtResource("1_3va73")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gmgdr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3fye")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4qlq2"]
+size = Vector2(13, 25)
+
+[node name="Pedro O Esqueleto" type="CharacterBody2D" unique_id=1314516873]
+collision_layer = 4
+script = ExtResource("1_4qlq2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=401101387]
+position = Vector2(167, 117)
+shape = SubResource("CapsuleShape2D_4qlq2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1052341262]
+position = Vector2(166, 113)
+sprite_frames = SubResource("SpriteFrames_gmgdr")
+
+[node name="hitbox" type="Area2D" parent="." unique_id=1289287931]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=1889042996]
+position = Vector2(167.5, 115.5)
+shape = SubResource("RectangleShape2D_4qlq2")
+debug_color = Color(0.99999994, 0.01637035, 0.021757409, 0.41960785)

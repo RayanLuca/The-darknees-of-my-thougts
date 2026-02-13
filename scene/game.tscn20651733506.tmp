@@ -15,7 +15,11 @@
 position = Vector2(3, 0)
 
 [node name="player" parent="." unique_id=1989633027 instance=ExtResource("1_5kiuu")]
-position = Vector2(407, 132)
+position = Vector2(81, 118)
+max_speed = 80.0
+aceleration = 80
+deceleration = 80
+slide_deceleration = 20
 
 [node name="Tiles" type="Node2D" parent="." unique_id=1479123260]
 
