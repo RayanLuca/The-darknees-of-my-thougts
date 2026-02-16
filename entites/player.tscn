@@ -204,10 +204,16 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="hitbox" type="Area2D" parent="." unique_id=1530978513]
+collision_layer = 2
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=1645052347]
 position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_no378")
 debug_color = Color(0.9992406, 0, 0.13277727, 0.41960785)
 
+[node name="ReloadTimer" type="Timer" parent="." unique_id=359030424]
+one_shot = true
+
 [connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]

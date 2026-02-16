@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://dyd80leaeu50o"]
+
+[ext_resource type="Texture2D" uid="uid://dxmkfpqnn1l1j" path="res://sprites/3 - Skeleton/Spinning_Bone (16 x 16).png" id="1_0wj43"]
+[ext_resource type="Script" uid="uid://g4nfatoycinr" path="res://scripts/osso_do_pedrinho.gd" id="1_vd3sd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vd3sd"]
+radius = 5.0990195
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5r1l"]
+atlas = ExtResource("1_0wj43")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ji3w"]
+atlas = ExtResource("1_0wj43")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdkxr"]
+atlas = ExtResource("1_0wj43")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2c2wv"]
+atlas = ExtResource("1_0wj43")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p30sy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q5r1l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ji3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdkxr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2c2wv")
+}],
+"loop": true,
+"name": &"ossinho",
+"speed": 5.0
+}]
+
+[node name="Osso do Pedrinho" type="Area2D" unique_id=248943164 groups=["Enemis", "Letal_Area", "LethalArea"]]
+collision_layer = 32
+collision_mask = 3
+script = ExtResource("1_vd3sd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1933517579]
+shape = SubResource("CircleShape2D_vd3sd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=290390832]
+sprite_frames = SubResource("SpriteFrames_p30sy")
+animation = &"ossinho"
+autoplay = "ossinho"
+frame_progress = 0.9524227
+
+[node name="Destroyertimer" type="Timer" parent="." unique_id=1888153468]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Destroyertimer" to="." method="_on_destroyertimer_timeout"]

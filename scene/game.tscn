@@ -15,7 +15,7 @@
 position = Vector2(3, 0)
 
 [node name="player" parent="." unique_id=1989633027 instance=ExtResource("1_5kiuu")]
-position = Vector2(407, 132)
+position = Vector2(404, 133)
 
 [node name="Tiles" type="Node2D" parent="." unique_id=1479123260]
 
@@ -81,6 +81,9 @@ next_level = "tropic"
 position = Vector2(21, 64)
 
 [node name="Pedro O Esqueleto" parent="." unique_id=1314516873 instance=ExtResource("10_yq8tf")]
-position = Vector2(293, 12)
+position = Vector2(1610, 95)
+
+[node name="Pedro O Esqueleto2" parent="." unique_id=2005224396 instance=ExtResource("10_yq8tf")]
+position = Vector2(470, 135)
 
 [editable path="LevelEnd"]
