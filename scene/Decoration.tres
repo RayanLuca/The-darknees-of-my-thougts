@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://dk5wfq5cn36c8" path="res://sprites/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png" id="1_xu6sn"]
 [ext_resource type="Texture2D" uid="uid://k4ye8722jinw" path="res://sprites/Seasonal Tilesets/5 - Misc. universal tiles/Flowers (16 x 16).png" id="2_1031y"]
 [ext_resource type="Texture2D" uid="uid://dx2qtou58ejuh" path="res://sprites/Seasonal Tilesets/5 - Misc. universal tiles/House (112 x 96).png" id="3_whjr5"]
-[ext_resource type="Texture2D" uid="uid://d1knn53ofu070" path="res://sprites/Seasonal Tilesets/5 - Misc. universal tiles/Lava_frames (16 x 32).png" id="4_4fjvk"]
 [ext_resource type="Texture2D" uid="uid://opc0jc8fu647" path="res://sprites/Seasonal Tilesets/4 - Winter World/Winter_entities (16 x 16).png" id="4_whjr5"]
 [ext_resource type="Texture2D" uid="uid://cbvwraollejcy" path="res://sprites/Seasonal Tilesets/3 - Tropics/Tropics_entities (16 x 16).png" id="5_1031y"]
 [ext_resource type="Texture2D" uid="uid://bbbq3row2opv" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Autumn_entities (16 x 16).png" id="7_4fjvk"]
@@ -94,25 +93,6 @@ texture = ExtResource("4_whjr5")
 5:1/0 = 0
 5:1/0/z_index = 1
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5g16k"]
-texture = ExtResource("4_4fjvk")
-0:0/0 = 0
-0:0/0/z_index = 2
-1:0/0 = 0
-1:0/0/z_index = 2
-2:0/0 = 0
-2:0/0/z_index = 2
-3:0/0 = 0
-3:0/0/z_index = 2
-0:1/0 = 0
-0:1/0/z_index = 2
-1:1/0 = 0
-1:1/0/z_index = 2
-2:1/0 = 0
-2:1/0/z_index = 2
-3:1/0 = 0
-3:1/0/z_index = 2
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_whjr5"]
 texture = ExtResource("5_1031y")
 11:2/0 = 0
@@ -193,7 +173,6 @@ texture = ExtResource("7_4fjvk")
 sources/0 = SubResource("TileSetAtlasSource_yq8tf")
 sources/1 = SubResource("TileSetAtlasSource_ym5sv")
 sources/2 = SubResource("TileSetAtlasSource_sng2h")
-sources/4 = SubResource("TileSetAtlasSource_5g16k")
 sources/5 = SubResource("TileSetAtlasSource_whjr5")
 sources/3 = SubResource("TileSetAtlasSource_4fjvk")
 sources/6 = SubResource("TileSetAtlasSource_bt6o4")

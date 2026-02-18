@@ -9,8 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://bkc5i4eon11u0" path="res://sprites/Seasonal Tilesets/3 - Tropics/Background parts/2 - Waters_version_2.png" id="7_34ia6"]
 [ext_resource type="Texture2D" uid="uid://d0k0opaa6iv78" path="res://sprites/Seasonal Tilesets/3 - Tropics/Background parts/1 - Waters_version_1.png" id="8_d18o5"]
 [ext_resource type="PackedScene" uid="uid://d3larf1yiclk4" path="res://entites/camera.tscn" id="9_34ia6"]
-[ext_resource type="PackedScene" uid="uid://bpp7p7rel3xdk" path="res://entites/Walter.tscn" id="10_d18o5"]
 [ext_resource type="PackedScene" uid="uid://b6jtpenq2dgth" path="res://entites/level_end.tscn" id="11_t8vtq"]
+[ext_resource type="PackedScene" uid="uid://cmkdahctmdqfu" path="res://entites/limit.tscn" id="12_ei81g"]
+[ext_resource type="PackedScene" uid="uid://diutejkv6ohhn" path="res://entites/pedro_o_esqueleto.tscn" id="13_xflqb"]
+[ext_resource type="PackedScene" uid="uid://b0531q7tirbnw" path="res://entites/morte_por_queda.tscn" id="13_ytc0w"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7xb8y"]
 animations = [{
@@ -27,7 +29,7 @@ animations = [{
 }]
 
 [node name="Tropic" type="Node2D" unique_id=1265775976]
-position = Vector2(-2, -8)
+position = Vector2(-1, -4)
 
 [node name="Player" parent="." unique_id=1989633027 instance=ExtResource("1_bmxgx")]
 position = Vector2(75, 169)
@@ -93,12 +95,42 @@ autoplay = "default"
 centered = false
 
 [node name="Camera" parent="." unique_id=1371373349 instance=ExtResource("9_34ia6")]
-position = Vector2(-181, 192)
+position = Vector2(76, 170)
 limit_right = 3085
-
-[node name="Player2" parent="." unique_id=1522491273 instance=ExtResource("10_d18o5")]
-position = Vector2(50, 159)
 
 [node name="LevelEnd" parent="." unique_id=451027808 instance=ExtResource("11_t8vtq")]
 position = Vector2(3115, -107)
 next_level = "forest"
+
+[node name="limit" parent="." unique_id=841681097 instance=ExtResource("12_ei81g")]
+position = Vector2(-8, 7)
+
+[node name="MortePorQueda" parent="." unique_id=252263837 instance=ExtResource("13_ytc0w")]
+position = Vector2(0, 22)
+
+[node name="Pedro O Esqueleto" parent="." unique_id=1314516873 instance=ExtResource("13_xflqb")]
+position = Vector2(245, 168)
+
+[node name="Pedro O Esqueleto4" parent="." unique_id=1553337373 instance=ExtResource("13_xflqb")]
+position = Vector2(1300, 88)
+
+[node name="Pedro O Esqueleto5" parent="." unique_id=388118944 instance=ExtResource("13_xflqb")]
+position = Vector2(1449, 89)
+
+[node name="Pedro O Esqueleto6" parent="." unique_id=1665081939 instance=ExtResource("13_xflqb")]
+position = Vector2(1680, 70)
+
+[node name="Pedro O Esqueleto7" parent="." unique_id=1760561469 instance=ExtResource("13_xflqb")]
+position = Vector2(1888, 121)
+
+[node name="Pedro O Esqueleto8" parent="." unique_id=1446180321 instance=ExtResource("13_xflqb")]
+position = Vector2(1901, 55)
+
+[node name="Pedro O Esqueleto9" parent="." unique_id=1570368385 instance=ExtResource("13_xflqb")]
+position = Vector2(2113, 121)
+
+[node name="Pedro O Esqueleto2" parent="." unique_id=661787967 instance=ExtResource("13_xflqb")]
+position = Vector2(391, 168)
+
+[node name="Pedro O Esqueleto3" parent="." unique_id=114033288 instance=ExtResource("13_xflqb")]
+position = Vector2(687, 153)

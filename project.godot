@@ -19,7 +19,7 @@ config/icon="res://icon.svg"
 
 window/size/viewport_width=400
 window/size/viewport_height=208
-window/size/mode=2
+window/size/mode=3
 window/stretch/mode="canvas_items"
 window/canvas_textures/default_texture_filter=1
 
@@ -64,7 +64,7 @@ duck={
 2d_physics/layer_3="Enemis"
 2d_physics/layer_4="Level_end"
 2d_physics/layer_5="Decoration"
-2d_physics/layer_6="letal_area"
+2d_physics/layer_6="Lethal_area"
 
 [physics]
 

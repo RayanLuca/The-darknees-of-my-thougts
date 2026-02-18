@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b0531q7tirbnw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ofwgb"]
+size = Vector2(3696.5, 20)
+
+[node name="MortePorQueda" type="StaticBody2D" unique_id=252263837 groups=["LethalArea"]]
+collision_layer = 32
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1175012249]
+position = Vector2(1833.75, 196)
+shape = SubResource("RectangleShape2D_ofwgb")
+debug_color = Color(0.9984421, 0, 0.15339667, 0.41960785)

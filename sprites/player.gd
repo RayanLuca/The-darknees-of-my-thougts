@@ -19,6 +19,7 @@ enum PlayerState{
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 @onready var reload_timer: Timer = $ReloadTimer
+@onready var hitbox_collision_shape: CollisionShape2D = $hitbox/CollisionShape2D
 
 
 # =========================
@@ -116,11 +117,17 @@ func go_to_duck_state():
 	collision_shape.shape.radius = 5
 	collision_shape.shape.height = 10
 	collision_shape.position.y = 3
-
+	
+	hitbox_collision_shape.shape.size.y = 10
+	hitbox_collision_shape.position.y = 3
+	
 func exit_from_dunk_state():
 	collision_shape.shape.radius = 6
 	collision_shape.shape.height = 16
 	collision_shape.position.y = 0
+	
+	hitbox_collision_shape.shape.size.y = 15
+	hitbox_collision_shape.position.y = 0.5
 
 func go_to_fall_state():
 	status = PlayerState.fall
@@ -131,17 +138,26 @@ func go_to_slide_state():
 	anim.play("slide")
 	collision_shape.shape.radius = 5
 	collision_shape.shape.height = 10
-	collision_shape.position.y = 3
+	collision_shape.position.y = 2
+	
+	hitbox_collision_shape.shape.size.y = 10
+	hitbox_collision_shape.position.y = 3
 
 func exit_from_slide_state():
 	collision_shape.shape.radius = 6
 	collision_shape.shape.height = 16
 	collision_shape.position.y = 0
+	
+	hitbox_collision_shape.shape.size.y = 15
+	hitbox_collision_shape.position.y = 0.5
 
 func go_to_dead_state():
+	if status == PlayerState.dead:
+		return
+		
 	status = PlayerState.dead
 	anim.play("dead")
-	velocity = Vector2.ZERO
+	velocity.x = 0
 	reload_timer.start()
 	
 # =========================
@@ -245,14 +261,29 @@ func update_direction():
 
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Enemis"):
+		hit_enemy(area)
+	elif area.is_in_group("LethalArea"):
+		hit_lethal_area()
+	
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	if body.is_in_group("LethalArea"):
+		go_to_dead_state()
+	
+	
+	
+	
+	
+func hit_enemy(area: Area2D):
 	if velocity.y > 0:
 		#inimigo morre
 		area.get_parent().take_damage()
 		go_to_jump_state()
 	else:
-		if status != PlayerState.dead:
-			go_to_dead_state()
-
+		go_to_dead_state()
+	
+func hit_lethal_area():
+	go_to_dead_state()
 	
 func _on_reload_timer_timeout() -> void:
 	get_tree().reload_current_scene()

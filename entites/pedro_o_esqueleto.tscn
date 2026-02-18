@@ -164,8 +164,8 @@ script = ExtResource("1_4qlq2")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1052341262]
 position = Vector2(-2, -6)
 sprite_frames = SubResource("SpriteFrames_gmgdr")
-animation = &"attack"
-frame = 4
+animation = &"dead"
+frame = 6
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=401101387]
@@ -196,6 +196,6 @@ target_position = Vector2(61, 0)
 collision_mask = 2
 
 [node name="BoneStartPosition" type="Node2D" parent="." unique_id=1938441916]
-position = Vector2(11, -7)
+position = Vector2(11, -4)
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

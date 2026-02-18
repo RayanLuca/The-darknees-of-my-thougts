@@ -10,12 +10,14 @@
 [ext_resource type="PackedScene" uid="uid://bpp7p7rel3xdk" path="res://entites/Walter.tscn" id="8_ll5lq"]
 [ext_resource type="PackedScene" uid="uid://b6jtpenq2dgth" path="res://entites/level_end.tscn" id="9_17rxn"]
 [ext_resource type="PackedScene" uid="uid://diutejkv6ohhn" path="res://entites/pedro_o_esqueleto.tscn" id="10_yq8tf"]
+[ext_resource type="PackedScene" uid="uid://cmkdahctmdqfu" path="res://entites/limit.tscn" id="11_ym5sv"]
+[ext_resource type="PackedScene" uid="uid://b0531q7tirbnw" path="res://entites/morte_por_queda.tscn" id="12_sng2h"]
 
 [node name="Game" type="Node2D" unique_id=607595069]
-position = Vector2(3, 0)
+position = Vector2(0, -4)
 
 [node name="player" parent="." unique_id=1989633027 instance=ExtResource("1_5kiuu")]
-position = Vector2(404, 133)
+position = Vector2(79, 119)
 
 [node name="Tiles" type="Node2D" parent="." unique_id=1479123260]
 
@@ -29,6 +31,7 @@ tile_map_data = PackedByteArray("AAAZAAgAAQAAAAAAAAAWAAgAAQABAAAAAAAYAAYAAQADAAA
 tile_set = ExtResource("3_33cqm")
 
 [node name="Camera" parent="." unique_id=1371373349 instance=ExtResource("4_xwcet")]
+position = Vector2(406, 136)
 limit_top = -208
 limit_right = 3215
 
@@ -80,10 +83,31 @@ next_level = "tropic"
 [node name="CollisionShape2D" parent="LevelEnd" index="0" unique_id=1563228046]
 position = Vector2(21, 64)
 
+[node name="limit" parent="." unique_id=841681097 instance=ExtResource("11_ym5sv")]
+position = Vector2(-13, -39)
+
+[node name="MortePorQueda" parent="." unique_id=252263837 instance=ExtResource("12_sng2h")]
+position = Vector2(-3, 31)
+
 [node name="Pedro O Esqueleto" parent="." unique_id=1314516873 instance=ExtResource("10_yq8tf")]
 position = Vector2(1610, 95)
 
+[node name="Pedro O Esqueleto5" parent="." unique_id=694034590 instance=ExtResource("10_yq8tf")]
+position = Vector2(1784, 102)
+
+[node name="Pedro O Esqueleto6" parent="." unique_id=735188771 instance=ExtResource("10_yq8tf")]
+position = Vector2(2023, 104)
+
+[node name="Pedro O Esqueleto8" parent="." unique_id=1962160499 instance=ExtResource("10_yq8tf")]
+position = Vector2(2584, 18)
+
+[node name="Pedro O Esqueleto4" parent="." unique_id=1690693002 instance=ExtResource("10_yq8tf")]
+position = Vector2(1479, 98)
+
 [node name="Pedro O Esqueleto2" parent="." unique_id=2005224396 instance=ExtResource("10_yq8tf")]
 position = Vector2(470, 135)
+
+[node name="Pedro O Esqueleto3" parent="." unique_id=602378966 instance=ExtResource("10_yq8tf")]
+position = Vector2(706, 116)
 
 [editable path="LevelEnd"]
