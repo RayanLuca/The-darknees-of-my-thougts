@@ -91,7 +91,7 @@ position = Vector2(2, -4)
 position = Vector2(6, 31)
 
 [node name="Player" parent="." unique_id=1989633027 instance=ExtResource("1_e2knd")]
-position = Vector2(39, 176)
+position = Vector2(32, 174)
 
 [node name="Terain" type="TileMapLayer" parent="." unique_id=840396423]
 position = Vector2(-1, 200)
@@ -192,6 +192,7 @@ limit_right = 3410
 
 [node name="LevelEnd" parent="." unique_id=451027808 instance=ExtResource("12_64es3")]
 position = Vector2(3421, -45)
+next_level = "TelaInicial"
 
 [node name="limit" parent="." unique_id=841681097 instance=ExtResource("14_ja8kk")]
 position = Vector2(-11, 1)
