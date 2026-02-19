@@ -1,13 +1,12 @@
 [gd_scene format=4 uid="uid://d3vg5kufjmqs7"]
 
-[ext_resource type="PackedScene" uid="uid://cyelbrw1wjum2" path="res://entites/player.tscn" id="1_5kiuu"]
+[ext_resource type="Script" uid="uid://dek6mr18p1j6m" path="res://scripts/game.gd" id="1_ym5sv"]
 [ext_resource type="TileSet" uid="uid://ct1uhyx87fipn" path="res://scene/terain.tres" id="2_xlg7c"]
 [ext_resource type="TileSet" uid="uid://dfmbnisttjjce" path="res://scene/Decoration.tres" id="3_33cqm"]
 [ext_resource type="PackedScene" uid="uid://d3larf1yiclk4" path="res://entites/camera.tscn" id="4_xwcet"]
 [ext_resource type="Texture2D" uid="uid://dt4x4yb0eve1c" path="res://sprites/Seasonal Tilesets/4 - Winter World/Background parts/3 - Big_mountain_BG.png" id="5_qpk70"]
 [ext_resource type="Texture2D" uid="uid://rmgp1f84mrvh" path="res://sprites/Seasonal Tilesets/4 - Winter World/Background parts/2 - Smaller_mountains.png" id="6_ll5lq"]
 [ext_resource type="Texture2D" uid="uid://3k7dp70dqy" path="res://sprites/Seasonal Tilesets/4 - Winter World/Background parts/1 - Snowy_foreground_area.png" id="7_17rxn"]
-[ext_resource type="PackedScene" uid="uid://bpp7p7rel3xdk" path="res://entites/Walter.tscn" id="8_ll5lq"]
 [ext_resource type="PackedScene" uid="uid://b6jtpenq2dgth" path="res://entites/level_end.tscn" id="9_17rxn"]
 [ext_resource type="PackedScene" uid="uid://diutejkv6ohhn" path="res://entites/pedro_o_esqueleto.tscn" id="10_yq8tf"]
 [ext_resource type="PackedScene" uid="uid://cmkdahctmdqfu" path="res://entites/limit.tscn" id="11_ym5sv"]
@@ -15,9 +14,7 @@
 
 [node name="Game" type="Node2D" unique_id=607595069]
 position = Vector2(0, -4)
-
-[node name="player" parent="." unique_id=1989633027 instance=ExtResource("1_5kiuu")]
-position = Vector2(79, 119)
+script = ExtResource("1_ym5sv")
 
 [node name="Tiles" type="Node2D" parent="." unique_id=1479123260]
 
@@ -71,11 +68,6 @@ centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 576, 208)
 
-[node name="Player" parent="." unique_id=716527085 instance=ExtResource("8_ll5lq")]
-position = Vector2(2005, -57)
-scale = Vector2(-1.0826977, 1)
-script = null
-
 [node name="LevelEnd" parent="." unique_id=451027808 instance=ExtResource("9_17rxn")]
 position = Vector2(3268, -44)
 next_level = "tropic"
@@ -109,5 +101,7 @@ position = Vector2(470, 135)
 
 [node name="Pedro O Esqueleto3" parent="." unique_id=602378966 instance=ExtResource("10_yq8tf")]
 position = Vector2(706, 116)
+
+[node name="SpawnPoint" type="Node2D" parent="." unique_id=652463058]
 
 [editable path="LevelEnd"]

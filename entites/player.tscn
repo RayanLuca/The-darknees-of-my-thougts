@@ -215,6 +215,8 @@ debug_color = Color(0.9992406, 0, 0.13277727, 0.41960785)
 [node name="ReloadTimer" type="Timer" parent="." unique_id=359030424]
 one_shot = true
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1543248216]
+
 [connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]

@@ -15,6 +15,9 @@ enum PlayerState{
 
 # =========================
 # NÓS DA CENA
+
+
+
 # =========================
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
@@ -64,6 +67,8 @@ func move(delta):
 # =========================
 func _ready() -> void:
 	go_to_idle_state()
+	add_to_group("Player")
+
 
 # =========================
 # LOOP PRINCIPAL DE FÍSICA
@@ -165,7 +170,10 @@ func go_to_dead_state():
 # =========================
 func idel_state(delta):
 	move(delta)
-	
+	if Input.is_action_just_pressed("jump"):
+		go_to_jump_state()
+		return
+		
 	if velocity.x !=0:
 		go_to_walk_state()
 		return

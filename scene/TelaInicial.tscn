@@ -46,7 +46,14 @@ text = "Iniciar"
 
 [node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=168306565]
 layout_mode = 2
+text = "Selecionar Personagem
+"
+
+[node name="Button3" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=700565620]
+layout_mode = 2
 text = "Sair"
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/Button3" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/Button3" to="." method="_on_button_3_pressed"]

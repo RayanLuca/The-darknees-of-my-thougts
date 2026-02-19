@@ -140,7 +140,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=1989633027 groups=["Player"]]
-position = Vector2(140, 331)
+position = Vector2(-6, 1)
 script = ExtResource("1_m8tt5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=367950223]
