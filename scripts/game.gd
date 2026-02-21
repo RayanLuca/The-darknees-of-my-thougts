@@ -6,7 +6,7 @@ func _ready():
 	var spawn_point = get_node_or_null("SpawnPoint")
 
 	if spawn_point == null:
-		print("ERRO: SpawnPoint não existe na cena!")
+		print("ERRO: SpawnPoint não encontrado!")
 		return
 
 	var caminhos = {
@@ -14,9 +14,10 @@ func _ready():
 		"walter": "res://entites/Walter.tscn"
 	}
 
+	# Define padrão caso esteja vazio ou inválido
 	if not caminhos.has(Global.personagem_escolhido):
-		print("ERRO: personagem inválido ou não selecionado")
-		return
+		print("Personagem inválido ou não selecionado. Usando Player padrão.")
+		Global.personagem_escolhido = "player"
 
 	var cena = load(caminhos[Global.personagem_escolhido])
 
@@ -25,10 +26,6 @@ func _ready():
 		return
 
 	var personagem = cena.instantiate()
-
-	if personagem == null:
-		print("ERRO: não conseguiu instanciar personagem!")
-		return
 
 	personagem.position = spawn_point.position
 	add_child(personagem)
