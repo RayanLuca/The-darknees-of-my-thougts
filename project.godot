@@ -32,6 +32,8 @@ window/canvas_textures/default_texture_filter=1
 Player=""
 Enemies=""
 LethalArea=""
+AttackPlayer=""
+terrain=""
 
 [input]
 
@@ -75,6 +77,8 @@ attack={
 2d_physics/layer_4="Level_end"
 2d_physics/layer_5="Decoration"
 2d_physics/layer_6="Lethal_area"
+2d_physics/layer_7="AttackPlayer"
+2d_physics/layer_8="terrain"
 
 [physics]
 

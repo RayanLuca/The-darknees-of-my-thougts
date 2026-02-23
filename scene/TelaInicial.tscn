@@ -1,6 +1,110 @@
 [gd_scene format=3 uid="uid://4a03ge3mbjus"]
 
 [ext_resource type="Script" uid="uid://bxnste4rkeov1" path="res://scene/control.gd" id="1_iegen"]
+[ext_resource type="Texture2D" uid="uid://cbux4if8gdoij" path="res://sprites/Gemini_Generated_Image_1m2fl41m2fl41m2f.png" id="2_33ga5"]
+[ext_resource type="FontFile" uid="uid://drqvt8b360x3t" path="res://sprites/NotJamBlkltr13.ttf" id="3_f67lo"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3nn80"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v0yid"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ro07d"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x44pl"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.225, 0.225, 0.225, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w31su"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4jxib"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="Theme" id="Theme_kx7sl"]
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 16
+Button/styles/disabled = SubResource("StyleBoxFlat_v0yid")
+Button/styles/focus = SubResource("StyleBoxFlat_ro07d")
+Button/styles/hover = SubResource("StyleBoxFlat_x44pl")
+Button/styles/normal = SubResource("StyleBoxFlat_w31su")
+Button/styles/pressed = SubResource("StyleBoxFlat_4jxib")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_8i17r"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_34axk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_u4f8u"]
 
 [node name="Control" type="Control" unique_id=787854880]
 layout_mode = 3
@@ -11,14 +115,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_iegen")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1118383220]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 1, 1, 1)
+[node name="TextureRect" type="TextureRect" parent="." unique_id=507743285]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 208.0
+texture = ExtResource("2_33ga5")
+expand_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1812644951]
 layout_mode = 1
@@ -27,33 +129,74 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -90.0
+offset_top = -12.0
+offset_right = 91.0
+offset_bottom = 65.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset_ratio = Vector2(1, 1)
+alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1775789885]
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=171774270]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_stretch_ratio = 0.0
+alignment = 1
 
-[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1732728242]
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1874153420]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_f67lo")
 text = "Iniciar"
+label_settings = SubResource("LabelSettings_3nn80")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=168306565]
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/Label" unique_id=1732728242]
+layout_mode = 0
+offset_left = 58.0
+offset_right = 124.0
+offset_bottom = 22.0
+theme = SubResource("Theme_kx7sl")
+icon = SubResource("ViewportTexture_8i17r")
+flat = true
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=624265870]
 layout_mode = 2
-text = "Selecionar Personagem
+theme_override_fonts/font = ExtResource("3_f67lo")
+text = "Selecionar Personagem"
+label_settings = SubResource("LabelSettings_34axk")
+
+[node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/Label2" unique_id=168306565]
+layout_mode = 0
+offset_left = -2.0
+offset_top = -4.0
+offset_right = 182.0
+offset_bottom = 27.0
+text = "
 "
+flat = true
 
-[node name="Button3" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=700565620]
+[node name="Label3" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1822821395]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_f67lo")
 text = "Sair"
+label_settings = SubResource("LabelSettings_u4f8u")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/Button3" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/Button3" to="." method="_on_button_3_pressed"]
+[node name="Button3" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/Label3" unique_id=700565620]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 2.0
+offset_right = 120.0
+offset_bottom = 20.0
+flat = true
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/Label/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/Label2/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/Label3/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/Label3/Button3" to="." method="_on_button_2_pressed"]

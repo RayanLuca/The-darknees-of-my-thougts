@@ -10,9 +10,11 @@ func _process(delta: float) -> void:
 
 func set_direction(skeleton_direction):
 	direction = skeleton_direction
+	
 	if direction > 0:
 		animated_sprite_2d.flip_h = false
 		animated_sprite_2d.flip_h = true
+		
 
 
 func _on_destroyertimer_timeout() -> void:

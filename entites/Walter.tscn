@@ -273,6 +273,9 @@ one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1543248216]
 
+[node name="BoneStartPosition" type="Marker2D" parent="." unique_id=830484632]
+position = Vector2(10, -4)
+
 [connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]
