@@ -17,11 +17,11 @@ enum PlayerState{
 
 const FIRE = preload("uid://dldvg2lsyhvyf")
 
-@export var max_speed = 80.0
-@export var aceleration = 80
+@export var max_speed = 60
+@export var aceleration = 60
 @export var deceleration = 80
 
-const JUMP_VELOCITY = -300.0
+const JUMP_VELOCITY = -350.0
 
 var direction = 0
 var status: PlayerState

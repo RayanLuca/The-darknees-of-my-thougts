@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://cdmvsqs6cctct"]
 
 [ext_resource type="Script" uid="uid://k5ulehlw4jot" path="res://scene/select_player.gd" id="1_wjepo"]
+[ext_resource type="Texture2D" uid="uid://b87acd16wkrcp" path="res://sprites/Gemini_Generated_Image_b29fzwb29fzwb29f.png" id="2_0qhj7"]
 [ext_resource type="Texture2D" uid="uid://c87mopftxkxjv" path="res://sprites/1 - Penguin/Standing (16 x 16).png" id="2_ugvkj"]
 [ext_resource type="Texture2D" uid="uid://dridjjqfumpk7" path="res://sprites/4 - Percy/Falling (32 x 32).png" id="3_0qhj7"]
+[ext_resource type="FontFile" uid="uid://drqvt8b360x3t" path="res://sprites/NotJamBlkltr13.ttf" id="5_c0o0t"]
 
 [node name="SelectPlayer" type="Control" unique_id=1141244771]
 layout_mode = 3
@@ -12,6 +14,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wjepo")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=536641140]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 208.0
+texture = ExtResource("2_0qhj7")
+expand_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1037718382]
 layout_mode = 1
@@ -42,28 +51,50 @@ grow_vertical = 0
 
 [node name="PlayerButton" type="TextureButton" parent="." unique_id=1417755605]
 layout_mode = 0
-offset_left = 174.0
-offset_top = 84.0
-offset_right = 190.0
-offset_bottom = 124.0
+offset_left = 89.0
+offset_top = 101.0
+offset_right = 105.0
+offset_bottom = 118.0
 texture_normal = ExtResource("2_ugvkj")
 
 [node name="WalterButton2" type="TextureButton" parent="." unique_id=1175020324]
-layout_mode = 0
-offset_left = 194.0
-offset_top = 84.0
-offset_right = 226.0
-offset_bottom = 124.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -12.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
 texture_normal = ExtResource("3_0qhj7")
 
-[node name="ConfirmationButton" type="Button" parent="." unique_id=894560585]
-layout_mode = 0
-offset_left = 156.5
-offset_top = 168.0
-offset_right = 243.5
-offset_bottom = 199.0
+[node name="Label" type="Label" parent="." unique_id=2092747908]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -51.5
+offset_top = -23.0
+offset_right = 51.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("5_c0o0t")
 text = "Confirmar"
+
+[node name="ConfirmationButton" type="Button" parent="Label" unique_id=894560585]
+layout_mode = 0
+offset_left = -3.5
+offset_top = -6.0
+offset_right = 83.5
+offset_bottom = 25.0
+flat = true
 
 [connection signal="pressed" from="PlayerButton" to="." method="_on_player_button_pressed"]
 [connection signal="pressed" from="WalterButton2" to="." method="_on_walter_button_2_pressed"]
-[connection signal="pressed" from="ConfirmationButton" to="." method="_on_confirmation_button_pressed"]
+[connection signal="pressed" from="Label/ConfirmationButton" to="." method="_on_confirmation_button_pressed"]
