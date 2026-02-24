@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b6jtpenq2dgth" path="res://entites/level_end.tscn" id="9_17rxn"]
 [ext_resource type="PackedScene" uid="uid://diutejkv6ohhn" path="res://entites/pedro_o_esqueleto.tscn" id="10_yq8tf"]
 [ext_resource type="PackedScene" uid="uid://cmkdahctmdqfu" path="res://entites/limit.tscn" id="11_ym5sv"]
+[ext_resource type="PackedScene" uid="uid://bscjsdcdom7x4" path="res://entites/spawn_point.tscn" id="12_5g16k"]
 [ext_resource type="PackedScene" uid="uid://b0531q7tirbnw" path="res://entites/morte_por_queda.tscn" id="12_sng2h"]
 
 [node name="Game" type="Node2D" unique_id=607595069]
@@ -102,7 +103,7 @@ position = Vector2(470, 135)
 [node name="Pedro O Esqueleto3" parent="." unique_id=602378966 instance=ExtResource("10_yq8tf")]
 position = Vector2(706, 116)
 
-[node name="SpawnPoint" type="Node2D" parent="." unique_id=652463058]
+[node name="SpawnPoint" parent="." unique_id=415624053 instance=ExtResource("12_5g16k")]
 position = Vector2(88, 118)
 
 [editable path="LevelEnd"]

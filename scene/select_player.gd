@@ -2,30 +2,30 @@ extends Control
 
 var personagem_selecionado: String = ""
 
+@onready var player_button = $PlayerButton
+@onready var walter_button = $WalterButton
+
 func _ready():
 	print("Tela de seleção carregada")
 
-func _on_player_button_pressed() -> void:
-	print("Player clicado")
-	personagem_selecionado = "player"
+func _on_player_button_toggled(button_pressed: bool) -> void:
+	if button_pressed:
+		walter_button.button_pressed = false
+		personagem_selecionado = "player"
+		print("Player selecionado")
 
-func _on_walter_button_2_pressed() -> void:
-	print("Walter clicado")
-	personagem_selecionado = "walter"
+func _on_walter_button_toggled(button_pressed: bool) -> void:
+	if button_pressed:
+		player_button.button_pressed = false
+		personagem_selecionado = "walter"
+		print("Walter selecionado")
 
 func _on_confirmation_button_pressed() -> void:
 	print("Confirmar clicado")
 
-	# Define player como padrão se nada foi escolhido
 	if personagem_selecionado == "":
-		print("Nenhum personagem escolhido. Usando Player padrão.")
 		personagem_selecionado = "player"
+		print("Nenhum personagem escolhido. Usando Player padrão.")
 
 	Global.personagem_escolhido = personagem_selecionado
-
-	# Forma segura de trocar de cena
-	var tree = Engine.get_main_loop() as SceneTree
-	if tree:
-		tree.change_scene_to_file("res://scene/game.tscn")
-	else:
-		print("ERRO: SceneTree não encontrado")
+	get_tree().change_scene_to_file("res://scene/game.tscn")

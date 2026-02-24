@@ -4,7 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://b87acd16wkrcp" path="res://sprites/Gemini_Generated_Image_b29fzwb29fzwb29f.png" id="2_0qhj7"]
 [ext_resource type="Texture2D" uid="uid://c87mopftxkxjv" path="res://sprites/1 - Penguin/Standing (16 x 16).png" id="2_ugvkj"]
 [ext_resource type="Texture2D" uid="uid://dridjjqfumpk7" path="res://sprites/4 - Percy/Falling (32 x 32).png" id="3_0qhj7"]
+[ext_resource type="Texture2D" uid="uid://bq7kywndgmukl" path="res://sprites/1 - Penguin/Looking_Off (16 x 16).png" id="4_c0o0t"]
 [ext_resource type="FontFile" uid="uid://drqvt8b360x3t" path="res://sprites/NotJamBlkltr13.ttf" id="5_c0o0t"]
+[ext_resource type="Texture2D" uid="uid://cjae3fx03eo4t" path="res://sprites/4 - Percy/Jump (32 x 32).png" id="6_qr0g0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qr0g0"]
+font_color = Color(0, 0, 0, 1)
 
 [node name="SelectPlayer" type="Control" unique_id=1141244771]
 layout_mode = 3
@@ -56,6 +61,7 @@ offset_top = 101.0
 offset_right = 105.0
 offset_bottom = 118.0
 texture_normal = ExtResource("2_ugvkj")
+texture_hover = ExtResource("4_c0o0t")
 
 [node name="WalterButton2" type="TextureButton" parent="." unique_id=1175020324]
 layout_mode = 1
@@ -70,7 +76,12 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+action_mode = 0
 texture_normal = ExtResource("3_0qhj7")
+texture_pressed = ExtResource("6_qr0g0")
+texture_hover = ExtResource("6_qr0g0")
+texture_disabled = ExtResource("6_qr0g0")
+texture_focused = ExtResource("6_qr0g0")
 
 [node name="Label" type="Label" parent="." unique_id=2092747908]
 layout_mode = 1
@@ -86,6 +97,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("5_c0o0t")
 text = "Confirmar"
+label_settings = SubResource("LabelSettings_qr0g0")
 
 [node name="ConfirmationButton" type="Button" parent="Label" unique_id=894560585]
 layout_mode = 0
@@ -93,6 +105,12 @@ offset_left = -3.5
 offset_top = -6.0
 offset_right = 83.5
 offset_bottom = 25.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.43529412, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.43529412, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.43529412, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_c0o0t")
+text = "Confirmar"
 flat = true
 
 [connection signal="pressed" from="PlayerButton" to="." method="_on_player_button_pressed"]

@@ -283,10 +283,12 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 	
 	
 func hit_enemy(area: Area2D):
-	if velocity.y > 0:
-		#inimigo morre
-		area.get_parent().take_damage()
-		go_to_jump_state()
+	var enemy = area.get_parent()
+	
+	# centro do player comparado ao topo do inimigo
+	if global_position.y < enemy.global_position.y:
+		enemy.take_damage()
+		velocity.y = JUMP_VELOCITY * 0.7  # pequeno pulo de retorno
 	else:
 		go_to_dead_state()
 	
