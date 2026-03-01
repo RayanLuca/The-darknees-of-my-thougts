@@ -170,7 +170,15 @@ func exit_from_duck_state():
 func go_to_slide_state():
 	status = PlayerState.slide
 	anim.play("slide")
+	collision_shape.shape.radius = 5
+	collision_shape.shape.height = 10
+	collision_shape.position.y = 3
 
+	hitbox_collision_shape.shape.size.y = 10
+	hitbox_collision_shape.position.y = 5
+
+
+	
 func go_to_dead_state():
 	if status == PlayerState.dead:
 		return
@@ -246,9 +254,17 @@ func duck_state(_delta):
 
 func slide_state(delta):
 	velocity.x = move_toward(velocity.x, 0, slide_deceleration * delta)
-
+	
+	
 	if velocity.x == 0:
 		go_to_idle_state()
+		collision_shape.shape.radius = normal_radius
+		collision_shape.shape.height = normal_height
+		collision_shape.position.y = normal_position_y
+	
+		hitbox_collision_shape.shape.size.y = normal_hitbox_height
+		hitbox_collision_shape.position.y = normal_hitbox_position_y
+
 
 func dead_state(_delta):
 	pass
