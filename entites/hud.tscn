@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://c0xbxqqroohhx"]
+
+[ext_resource type="Script" uid="uid://cswbrx0u68m05" path="res://entites/scripts/hud.gd" id="1_37p78"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_64ctp"]
+bg_color = Color(0, 0.20628545, 0.003019627, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8sq4i"]
+bg_color = Color(0, 1, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0.20784314, 0.003921569, 1)
+
+[node name="HUD" type="CanvasLayer" unique_id=970509904]
+script = ExtResource("1_37p78")
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=1229542906]
+offset_top = 15.0
+offset_right = 103.0
+offset_bottom = 27.0
+theme_override_styles/background = SubResource("StyleBoxFlat_64ctp")
+theme_override_styles/fill = SubResource("StyleBoxFlat_8sq4i")
+value = 50.0
+show_percentage = false

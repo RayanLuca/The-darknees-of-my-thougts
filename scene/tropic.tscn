@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://cgp1ybe14ngi0"]
 
-[ext_resource type="Script" uid="uid://bnxjm3fwy46d2" path="res://scripts/tropic.gd" id="1_xflqb"]
+[ext_resource type="Script" uid="uid://bnxjm3fwy46d2" path="res://entites/scripts/tropic.gd" id="1_xflqb"]
 [ext_resource type="TileSet" uid="uid://ct1uhyx87fipn" path="res://scene/terain.tres" id="2_ry6l7"]
 [ext_resource type="TileSet" uid="uid://dfmbnisttjjce" path="res://scene/Decoration.tres" id="3_ry6l7"]
 [ext_resource type="Texture2D" uid="uid://dv5ausypa8my0" path="res://sprites/Seasonal Tilesets/3 - Tropics/Background parts/5 - Sky_color.png" id="4_4big0"]

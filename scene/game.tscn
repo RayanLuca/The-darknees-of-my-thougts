@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://d3vg5kufjmqs7"]
 
-[ext_resource type="Script" uid="uid://dek6mr18p1j6m" path="res://scripts/game.gd" id="1_ym5sv"]
+[ext_resource type="Script" uid="uid://dek6mr18p1j6m" path="res://entites/scripts/game.gd" id="1_ym5sv"]
 [ext_resource type="TileSet" uid="uid://ct1uhyx87fipn" path="res://scene/terain.tres" id="2_xlg7c"]
 [ext_resource type="TileSet" uid="uid://dfmbnisttjjce" path="res://scene/Decoration.tres" id="3_33cqm"]
 [ext_resource type="PackedScene" uid="uid://d3larf1yiclk4" path="res://entites/camera.tscn" id="4_xwcet"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cmkdahctmdqfu" path="res://entites/limit.tscn" id="11_ym5sv"]
 [ext_resource type="PackedScene" uid="uid://bscjsdcdom7x4" path="res://entites/spawn_point.tscn" id="12_5g16k"]
 [ext_resource type="PackedScene" uid="uid://b0531q7tirbnw" path="res://entites/morte_por_queda.tscn" id="12_sng2h"]
+[ext_resource type="PackedScene" uid="uid://c0xbxqqroohhx" path="res://entites/hud.tscn" id="13_5g16k"]
 
 [node name="Game" type="Node2D" unique_id=607595069]
 position = Vector2(0, -4)
@@ -80,7 +81,7 @@ position = Vector2(21, 64)
 position = Vector2(-13, -39)
 
 [node name="MortePorQueda" parent="." unique_id=252263837 instance=ExtResource("12_sng2h")]
-position = Vector2(-3, 31)
+position = Vector2(9, 69)
 
 [node name="Pedro O Esqueleto" parent="." unique_id=1314516873 instance=ExtResource("10_yq8tf")]
 position = Vector2(1610, 95)
@@ -105,5 +106,7 @@ position = Vector2(706, 116)
 
 [node name="SpawnPoint" parent="." unique_id=415624053 instance=ExtResource("12_5g16k")]
 position = Vector2(88, 118)
+
+[node name="HUD" parent="." unique_id=970509904 instance=ExtResource("13_5g16k")]
 
 [editable path="LevelEnd"]

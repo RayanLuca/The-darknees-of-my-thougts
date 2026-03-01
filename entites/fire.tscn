@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dldvg2lsyhvyf"]
 
-[ext_resource type="Script" uid="uid://ejglcm6omdun" path="res://scripts/fire.gd" id="1_bi2ii"]
+[ext_resource type="Script" uid="uid://ejglcm6omdun" path="res://entites/scripts/fire.gd" id="1_bi2ii"]
 [ext_resource type="Texture2D" uid="uid://bsmrtss7sqqdj" path="res://sprites/4 - Percy/Fireball_Projectile (16 x 16).png" id="2_bi2ii"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vd3sd"]

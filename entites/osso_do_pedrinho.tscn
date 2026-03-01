@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://dyd80leaeu50o"]
 
 [ext_resource type="Texture2D" uid="uid://dxmkfpqnn1l1j" path="res://sprites/3 - Skeleton/Spinning_Bone (16 x 16).png" id="1_0wj43"]
-[ext_resource type="Script" uid="uid://g4nfatoycinr" path="res://scripts/osso_do_pedrinho.gd" id="1_vd3sd"]
+[ext_resource type="Script" uid="uid://g4nfatoycinr" path="res://entites/scripts/osso_do_pedrinho.gd" id="1_vd3sd"]
+[ext_resource type="PackedScene" uid="uid://dwmhqxd4rajxj" path="res://entites/health_component.tscn" id="3_q5r1l"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vd3sd"]
 radius = 5.0990195
@@ -60,6 +61,8 @@ frame_progress = 0.9524227
 wait_time = 10.0
 one_shot = true
 autostart = true
+
+[node name="HealthComponent" parent="." unique_id=1319967137 instance=ExtResource("3_q5r1l")]
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

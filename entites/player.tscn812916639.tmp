@@ -182,7 +182,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_oymiy")
 }],
 "loop": true,
-"name": &"walk",
+"name": &"wolk",
 "speed": 10.0
 }]
 
@@ -201,7 +201,7 @@ shape = SubResource("CapsuleShape2D_y541m")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=88931036]
 z_index = 5
 sprite_frames = SubResource("SpriteFrames_pih8c")
-animation = &"walk"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="hitbox" type="Area2D" parent="." unique_id=1530978513]

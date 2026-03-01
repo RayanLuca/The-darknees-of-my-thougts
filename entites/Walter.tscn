@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bpp7p7rel3xdk"]
 
-[ext_resource type="Script" uid="uid://b7kni22ltwn35" path="res://scripts/walter.gd" id="1_ohqcf"]
+[ext_resource type="Script" uid="uid://b7kni22ltwn35" path="res://entites/scripts/walter.gd" id="1_ohqcf"]
 [ext_resource type="Texture2D" uid="uid://d0k2213kgubfs" path="res://sprites/4 - Percy/Hurt (32 x 32).png" id="2_078ya"]
 [ext_resource type="Texture2D" uid="uid://w262x7ioirxu" path="res://sprites/4 - Percy/Idle (32 x 32).png" id="2_m8tt5"]
 [ext_resource type="Texture2D" uid="uid://cfhjpcydvd62g" path="res://sprites/4 - Percy/Shooting_Fireball (32 x 32).png" id="2_ohqcf"]

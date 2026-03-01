@@ -17,6 +17,21 @@ enum PlayerState{
 
 const FIRE = preload("uid://dldvg2lsyhvyf")
 
+# ===============================================================
+# SISTEMA DE VIDA
+# ===============================================================
+
+@export var max_health: int = 3
+var health: int
+signal health_changed(current_health)
+
+@export var invincible_time: float = 0.8
+var is_invincible: bool = false
+
+# ===============================================================
+# MOVIMENTO
+# ===============================================================
+
 @export var max_speed = 60
 @export var aceleration = 60
 @export var deceleration = 80
@@ -26,10 +41,6 @@ const JUMP_VELOCITY = -350.0
 var direction = 0
 var status: PlayerState
 var can_throw = false
-
-# ===============================================================
-# MOVIMENTO
-# ===============================================================
 
 func move(delta): 
 	update_direction()
@@ -60,6 +71,8 @@ func update_direction():
 # ===============================================================
 
 func _ready() -> void:
+	health = max_health
+	emit_signal("health_changed", health)
 	go_to_idle_state()
 	add_to_group("Player")
 	anim.animation_finished.connect(_on_animation_finished)
@@ -116,15 +129,14 @@ func go_to_attack_state():
 	status = PlayerState.attack
 	anim.play("attack")
 	velocity.x = 0
-	can_throw = true   # habilita disparo
+	can_throw = true
 
 func go_to_duck_state():
 	status = PlayerState.duck
 	anim.play("duck")
-	hitbox.monitoring = false
 
 func exit_from_duck_state():
-	hitbox.monitoring = true
+	pass
 
 func go_to_dead_state():
 	if status == PlayerState.dead:
@@ -193,7 +205,6 @@ func fall_state(delta):
 func attack_state(_delta):
 	velocity.x = 0
 	
-	# dispara apenas no frame 5
 	if anim.frame == 5 and can_throw:
 		throw_bone()
 		can_throw = false
@@ -204,7 +215,7 @@ func duck_state(_delta):
 	if Input.is_action_just_released("duck"):
 		exit_from_duck_state()
 		go_to_idle_state()
-
+		
 func dead_state(_delta):
 	pass
 
@@ -216,35 +227,61 @@ func _on_animation_finished():
 	if status == PlayerState.attack:
 		go_to_idle_state()
 
-
-	
 func _on_hitbox_area_entered(area: Area2D) -> void:
-	if area.is_in_group("Enemis"):
+	if area.is_in_group("Enemies"):
 		hit_enemy(area)
 	elif area.is_in_group("LethalArea"):
 		hit_lethal_area()
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
-	if body.is_in_group("LethalArea"):
+	if status == PlayerState.duck:
+		return
+	go_to_dead_state()
+
+# ===============================================================
+# SISTEMA DE DANO
+# ===============================================================
+
+func take_damage(amount: int):
+	if status == PlayerState.dead:
+		return
+		
+	if is_invincible:
+		return
+		
+	# NÃO RECEBE DANO EM DUCK
+	if status == PlayerState.duck:
+		return
+	
+	health -= amount
+	emit_signal("health_changed", health)
+	
+	if health <= 0:
 		go_to_dead_state()
+	else:
+		start_invincibility()
 
+func start_invincibility():
+	is_invincible = true
+	modulate = Color(1, 0.6, 0.6)
 
+	await get_tree().create_timer(invincible_time).timeout
 
-# ===============================================================
-# DANO
-# ===============================================================
+	modulate = Color(1, 1, 1)
+	is_invincible = false
 
 func hit_enemy(area: Area2D):
 	if velocity.y > 0:
-		#inimigo morre
-		area.get_parent().take_damage()
+		var enemy = area.get_parent()
+		if enemy and enemy.has_method("take_damage"):
+			enemy.take_damage()
 		go_to_jump_state()
 	else:
-		go_to_dead_state()
+		take_damage(1)
 	
 func hit_lethal_area():
-	go_to_dead_state()
-	
+	take_damage(1)
+
 # ===============================================================
 # ATAQUE À DISTÂNCIA
 # ===============================================================
@@ -261,13 +298,10 @@ func throw_bone():
 	if dir == 0:
 		dir = -1 if anim.flip_h else 1
 
-	# Ajusta posição baseado na direção
 	var spawn_position = bone_start_position.global_position
 	
 	if dir < 0:
-		spawn_position.x -= 16  # ajusta esse valor até ficar perfeito
-	else:
-		spawn_position.x += 0
+		spawn_position.x -= 16
 
 	new_bone.global_position = spawn_position
 	new_bone.set_direction(dir)

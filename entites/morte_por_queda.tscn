@@ -7,7 +7,7 @@ size = Vector2(3696.5, 20)
 collision_layer = 32
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1175012249]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1175012249 groups=["LethalArea"]]
 position = Vector2(1833.75, 196)
 shape = SubResource("RectangleShape2D_ofwgb")
 debug_color = Color(0.9984421, 0, 0.15339667, 0.41960785)
