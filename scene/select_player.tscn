@@ -1,16 +1,13 @@
 [gd_scene format=3 uid="uid://cdmvsqs6cctct"]
 
 [ext_resource type="Script" uid="uid://k5ulehlw4jot" path="res://scene/select_player.gd" id="1_wjepo"]
-[ext_resource type="Texture2D" uid="uid://b87acd16wkrcp" path="res://sprites/Gemini_Generated_Image_b29fzwb29fzwb29f.png" id="2_0qhj7"]
+[ext_resource type="Texture2D" uid="uid://d328q6aema7c6" path="res://sprites/Gemini_Generated_Image_yfluf9yfluf9yflu.png" id="2_rbw5i"]
 [ext_resource type="Texture2D" uid="uid://c87mopftxkxjv" path="res://sprites/1 - Penguin/Standing (16 x 16).png" id="2_ugvkj"]
 [ext_resource type="Texture2D" uid="uid://dridjjqfumpk7" path="res://sprites/4 - Percy/Falling (32 x 32).png" id="3_0qhj7"]
 [ext_resource type="ButtonGroup" uid="uid://cdylemvdqtfic" path="res://entites/button_grup.tres" id="3_rbw5i"]
 [ext_resource type="Texture2D" uid="uid://bq7kywndgmukl" path="res://sprites/1 - Penguin/Looking_Off (16 x 16).png" id="4_c0o0t"]
 [ext_resource type="FontFile" uid="uid://drqvt8b360x3t" path="res://sprites/NotJamBlkltr13.ttf" id="5_c0o0t"]
 [ext_resource type="Texture2D" uid="uid://cjae3fx03eo4t" path="res://sprites/4 - Percy/Jump (32 x 32).png" id="6_qr0g0"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_qr0g0"]
-font_color = Color(0, 0, 0, 1)
 
 [node name="SelectPlayer" type="Control" unique_id=1141244771]
 layout_mode = 3
@@ -25,7 +22,7 @@ script = ExtResource("1_wjepo")
 layout_mode = 0
 offset_right = 400.0
 offset_bottom = 208.0
-texture = ExtResource("2_0qhj7")
+texture = ExtResource("2_rbw5i")
 expand_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1037718382]
@@ -57,27 +54,59 @@ grow_vertical = 0
 
 [node name="PlayerButton" type="TextureButton" parent="." unique_id=1417755605]
 layout_mode = 0
-offset_left = 89.0
-offset_top = 101.0
-offset_right = 105.0
-offset_bottom = 118.0
+offset_left = 92.0
+offset_top = 96.0
+offset_right = 108.0
+offset_bottom = 113.0
 toggle_mode = true
 button_group = ExtResource("3_rbw5i")
 texture_normal = ExtResource("2_ugvkj")
 texture_pressed = ExtResource("4_c0o0t")
 texture_hover = ExtResource("4_c0o0t")
 
-[node name="WalterButton" type="TextureButton" parent="." unique_id=1175020324]
+[node name="Label" type="Label" parent="PlayerButton" unique_id=1527512849]
+visible = false
+layout_mode = 0
+offset_left = 79.0
+offset_top = 58.0
+offset_right = 138.0
+offset_bottom = 75.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_c0o0t")
+text = "nome"
+
+[node name="Label2" type="Label" parent="PlayerButton" unique_id=1546376265]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -12.0
-offset_top = -12.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = 18.0
+offset_top = 69.5
+offset_right = 183.0
+offset_bottom = 86.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 4
+text = "...É um pinguim em busca de aventura, que não se ve mais nas regras impostas a sua 
+espécie,porem sera que ele esta preparado pro mundo."
+horizontal_alignment = 1
+visible_characters_behavior = 2
+
+[node name="WalterButton" type="TextureButton" parent="." unique_id=1175020324]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.41700003
+anchor_top = 0.5
+anchor_right = 0.41700003
+anchor_bottom = 0.5
+offset_left = -14.800003
+offset_top = -18.0
+offset_right = 17.199997
+offset_bottom = 14.0
 grow_horizontal = 2
 grow_vertical = 2
 toggle_mode = true
@@ -87,36 +116,69 @@ texture_normal = ExtResource("3_0qhj7")
 texture_pressed = ExtResource("6_qr0g0")
 texture_hover = ExtResource("6_qr0g0")
 
-[node name="Label" type="Label" parent="." unique_id=2092747908]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -51.5
-offset_top = -23.0
-offset_right = 51.5
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("5_c0o0t")
-text = "Confirmar"
-label_settings = SubResource("LabelSettings_qr0g0")
-
-[node name="ConfirmationButton" type="Button" parent="Label" unique_id=894560585]
+[node name="Label" type="Label" parent="WalterButton" unique_id=1052086442]
+visible = false
 layout_mode = 0
-offset_left = -3.5
-offset_top = -6.0
-offset_right = 83.5
-offset_bottom = 25.0
+offset_left = 18.0
+offset_top = 68.0
+offset_right = 82.0
+offset_bottom = 85.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_c0o0t")
+text = "walter"
+
+[node name="Label2" type="Label" parent="WalterButton" unique_id=1639544211]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.0
+offset_top = 70.0
+offset_right = 114.0
+offset_bottom = 87.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 4
+text = "Walter da Silva Rex foi excluido por sua espécie por ser o unico dinossaoro de sua
+espécie sem o tão temido cacareijo amedrontador."
+horizontal_alignment = 1
+visible_characters_behavior = 2
+
+[node name="ConfirmationButton" type="Button" parent="." unique_id=894560585]
+layout_mode = 0
+offset_left = 294.0
+offset_top = 180.0
+offset_right = 367.0
+offset_bottom = 199.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(0.43529412, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.43529412, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.43529412, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_c0o0t")
+theme_override_font_sizes/font_size = 10
 text = "Confirmar"
+flat = true
+
+[node name="Voltar" type="Button" parent="." unique_id=1770258726]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 179.0
+offset_right = 103.0
+offset_bottom = 198.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.43529412, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.43529412, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.43529412, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_c0o0t")
+theme_override_font_sizes/font_size = 10
+text = "Voltar"
 flat = true
 
 [connection signal="pressed" from="PlayerButton" to="." method="_on_player_button_pressed"]
 [connection signal="pressed" from="WalterButton" to="." method="_on_walter_button_pressed"]
-[connection signal="pressed" from="Label/ConfirmationButton" to="." method="_on_confirmation_button_pressed"]
+[connection signal="pressed" from="ConfirmationButton" to="." method="_on_confirmation_button_pressed"]
+[connection signal="pressed" from="Voltar" to="." method="_on_voltar_pressed"]
