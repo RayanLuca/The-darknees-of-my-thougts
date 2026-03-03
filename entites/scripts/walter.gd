@@ -21,7 +21,7 @@ const FIRE = preload("uid://dldvg2lsyhvyf")
 # SISTEMA DE VIDA
 # ===============================================================
 
-@export var max_health: int = 3
+@export var max_health: int = 6
 var health: int
 signal health_changed(current_health)
 

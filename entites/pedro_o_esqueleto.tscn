@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://diutejkv6ohhn"]
 
-[ext_resource type="Script" uid="uid://46e3yknhujmh" path="res://entites/scripts/pedro_o_esqueleto.gd" id="1_4qlq2"]
+[ext_resource type="Script" uid="uid://46e3yknhujmh" path="res://scripts/pedro_o_esqueleto.gd" id="1_4qlq2"]
 [ext_resource type="Texture2D" uid="uid://bu6do6qyxxjxh" path="res://sprites/3 - Skeleton/Bone_Toss (32 x 32).png" id="2_gmgdr"]
 [ext_resource type="Texture2D" uid="uid://bxhpsxswwt3ee" path="res://sprites/3 - Skeleton/Crumbling_Into_Bone_Pile (32 x 32).png" id="2_v3fye"]
 [ext_resource type="Texture2D" uid="uid://c5ssogw8rof4r" path="res://sprites/3 - Skeleton/Limping_Movement (32 x 32).png" id="3_gmgdr"]

@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://cmkdahctmdqfu" path="res://entites/limit.tscn" id="14_ja8kk"]
 [ext_resource type="PackedScene" uid="uid://diutejkv6ohhn" path="res://entites/pedro_o_esqueleto.tscn" id="16_0xhum"]
 [ext_resource type="PackedScene" uid="uid://bscjsdcdom7x4" path="res://entites/spawn_point.tscn" id="17_p7yhu"]
+[ext_resource type="PackedScene" uid="uid://c0xbxqqroohhx" path="res://entites/hud.tscn" id="18_cwbpd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gwku7"]
 texture = ExtResource("10_jxvlp")
@@ -320,3 +321,5 @@ position = Vector2(3242, 173)
 
 [node name="SpawnPoint" parent="." unique_id=415624053 instance=ExtResource("17_p7yhu")]
 position = Vector2(15, 174)
+
+[node name="HUD" parent="." unique_id=970509904 instance=ExtResource("18_cwbpd")]

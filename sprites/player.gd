@@ -312,10 +312,14 @@ func _on_hitbox_area_entered(area):
 
 	if enemy != null and enemy.is_in_group("Enemies"):
 
-		if velocity.y > 150:
+		# Verifica se o player está acima do inimigo
+		if global_position.y < enemy.global_position.y - 5:
 			if enemy.has_method("take_damage"):
 				enemy.take_damage()
+
+			# Pequeno bounce após matar
 			velocity.y = JUMP_VELOCITY * 0.7
+			return
 		else:
 			take_damage(1)
 
