@@ -237,12 +237,11 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 	elif area.is_in_group("LethalArea"):
 		hit_lethal_area()
 
-func _on_hitbox_body_entered(body: Node2D) -> void:
-	if status == PlayerState.dead:
+func _on_hitbox_body_entered(body: Node2D):
+	if status == PlayerState.duck:
 		return
 		
-	if body.is_in_group("LethalArea"):
-		take_damage(1)
+	go_to_dead_state()
 
 # ===============================================================
 # DANO
