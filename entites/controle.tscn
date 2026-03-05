@@ -36,14 +36,14 @@ texture_normal = ExtResource("5_ncjrk")
 action = "left"
 
 [node name="pular" type="TouchScreenButton" parent="." unique_id=1920387098]
-position = Vector2(332, 132)
-scale = Vector2(0.57, 0.58)
+position = Vector2(298, 148.00002)
+scale = Vector2(0.4099997, 0.42)
 texture_normal = ExtResource("3_okvt4")
 action = "jump"
 
 [node name="ataque" type="TouchScreenButton" parent="." unique_id=721295056]
-position = Vector2(234.99997, 132)
-scale = Vector2(0.57, 0.58)
+position = Vector2(234.99997, 147)
+scale = Vector2(0.41000026, 0.42999995)
 texture_normal = ExtResource("6_n218y")
 action = "attack"
 

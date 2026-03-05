@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://b0531q7tirbnw" path="res://entites/morte_por_queda.tscn" id="13_ytc0w"]
 [ext_resource type="PackedScene" uid="uid://bscjsdcdom7x4" path="res://entites/spawn_point.tscn" id="14_xflqb"]
 [ext_resource type="PackedScene" uid="uid://c0xbxqqroohhx" path="res://entites/hud.tscn" id="15_xnncp"]
+[ext_resource type="PackedScene" uid="uid://rduuulhw38x5" path="res://entites/addcontroll.tscn" id="16_mjtd1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7xb8y"]
 animations = [{
@@ -140,3 +141,5 @@ position = Vector2(687, 153)
 position = Vector2(18, 168)
 
 [node name="HUD" parent="." unique_id=970509904 instance=ExtResource("15_xnncp")]
+
+[node name="Control" parent="." unique_id=498399005 instance=ExtResource("16_mjtd1")]
