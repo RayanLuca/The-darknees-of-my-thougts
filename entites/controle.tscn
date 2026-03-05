@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://b5ufpsfj8x8xp"]
+
+[ext_resource type="Script" uid="uid://ckqfskvp3gsro" path="res://entites/scripts/controle.gd" id="1_xnkt8"]
+[ext_resource type="Texture2D" uid="uid://cge2w6yy0r2cx" path="res://sprites/addons/controller_icons/assets/key/arrow_down.png" id="2_hf3oe"]
+[ext_resource type="Texture2D" uid="uid://d04bqc5v3befo" path="res://sprites/addons/controller_icons/assets/key/arrow_up.png" id="3_okvt4"]
+[ext_resource type="Texture2D" uid="uid://bbjc54bmpv3f8" path="res://sprites/addons/controller_icons/assets/key/arrow_right.png" id="4_fw4tj"]
+[ext_resource type="Texture2D" uid="uid://puc614rf26im" path="res://sprites/addons/controller_icons/assets/key/arrow_left.png" id="5_ncjrk"]
+[ext_resource type="Texture2D" uid="uid://c75c1nu5vft30" path="res://sprites/addons/controller_icons/assets/key/command.png" id="6_n218y"]
+
+[node name="controle" type="CanvasLayer" unique_id=1332677344]
+script = ExtResource("1_xnkt8")
+
+[node name="baixo" type="TouchScreenButton" parent="." unique_id=940870852]
+position = Vector2(28, 175)
+scale = Vector2(0.28, 0.29999992)
+texture_normal = ExtResource("2_hf3oe")
+texture_pressed = ExtResource("2_hf3oe")
+action = "duck"
+
+[node name="cima" type="TouchScreenButton" parent="." unique_id=342437793]
+position = Vector2(28, 133)
+scale = Vector2(0.28, 0.29999992)
+texture_normal = ExtResource("3_okvt4")
+action = "jump"
+
+[node name="direita" type="TouchScreenButton" parent="." unique_id=1169803563]
+position = Vector2(53, 154)
+scale = Vector2(0.28, 0.29999992)
+texture_normal = ExtResource("4_fw4tj")
+action = "right"
+
+[node name="esquerda" type="TouchScreenButton" parent="." unique_id=369115692]
+position = Vector2(3.9999962, 154.00002)
+scale = Vector2(0.28, 0.29999992)
+texture_normal = ExtResource("5_ncjrk")
+action = "left"
+
+[node name="pular" type="TouchScreenButton" parent="." unique_id=1920387098]
+position = Vector2(332, 132)
+scale = Vector2(0.57, 0.58)
+texture_normal = ExtResource("3_okvt4")
+action = "jump"
+
+[node name="ataque" type="TouchScreenButton" parent="." unique_id=721295056]
+position = Vector2(234.99997, 132)
+scale = Vector2(0.57, 0.58)
+texture_normal = ExtResource("6_n218y")
+action = "attack"
+
+[connection signal="pressed" from="baixo" to="." method="_on_baixo_pressed"]
+[connection signal="released" from="baixo" to="." method="_on_baixo_released"]
+[connection signal="pressed" from="cima" to="." method="_on_cima_pressed"]
+[connection signal="released" from="cima" to="." method="_on_cima_released"]
+[connection signal="pressed" from="direita" to="." method="_on_direita_pressed"]
+[connection signal="released" from="direita" to="." method="_on_direita_released"]
+[connection signal="pressed" from="esquerda" to="." method="_on_esquerda_pressed"]
+[connection signal="released" from="esquerda" to="." method="_on_esquerda_released"]
+[connection signal="pressed" from="pular" to="." method="_on_pular_pressed"]
+[connection signal="released" from="pular" to="." method="_on_pular_released"]
+[connection signal="pressed" from="ataque" to="." method="_on_ataque_pressed"]
+[connection signal="released" from="ataque" to="." method="_on_ataque_released"]

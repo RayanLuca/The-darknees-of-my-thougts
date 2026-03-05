@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://b0531q7tirbnw" path="res://entites/morte_por_queda.tscn" id="12_sng2h"]
 [ext_resource type="PackedScene" uid="uid://c0xbxqqroohhx" path="res://entites/hud.tscn" id="13_5g16k"]
 [ext_resource type="PackedScene" uid="uid://dfr1gh7heipo" path="res://entites/pause_menu.tscn" id="14_81276"]
+[ext_resource type="PackedScene" uid="uid://rduuulhw38x5" path="res://entites/addcontroll.tscn" id="15_ve786"]
 
 [node name="Game" type="Node2D" unique_id=607595069]
 position = Vector2(0, -4)
@@ -111,5 +112,9 @@ position = Vector2(88, 118)
 [node name="HUD" parent="." unique_id=970509904 instance=ExtResource("13_5g16k")]
 
 [node name="pause_menu" parent="." unique_id=1066587801 instance=ExtResource("14_81276")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1974235320]
+
+[node name="Control" parent="CanvasLayer" unique_id=498399005 instance=ExtResource("15_ve786")]
 
 [editable path="LevelEnd"]
